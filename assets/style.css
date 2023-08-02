@@ -30,7 +30,6 @@ html, body {
 
 #roadmap {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-top: 10%;
@@ -138,13 +137,26 @@ html, body {
 }
 
 @media only screen and (max-width: 600px) {
-    #roadmap .stop.active{
-        padding-right: 46px;
-        width: 496px;
-        margin-top: 32px;
-        &::after {
-            height: 64px;
-            width: 31px;
-       }
+    #roadmap {
+        flex-wrap: wrap;
+        & .stop.active{
+            padding-right: 46px;
+            width: 496px;
+            &::after {
+                height: 64px;
+                width: 31px;
+                margin-top: 32px;
+            }
+        }
+    }
+    .dotted-line {
+        display: block;
+        width: 0;
+        margin: 0 50px !important;
+        padding: 0px;
+        border-radius: 0;
+        border-top: 0 !important;
+        border-bottom: 0 !important;
+        border-right: dashed 2px red;
     }
 }
